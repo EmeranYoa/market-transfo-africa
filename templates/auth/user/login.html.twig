@@ -1,0 +1,62 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Se connecter{% endblock %}
+
+{% block body %}
+        <ul class="breadcrumb">
+                <li><a href="{{ path("app_home") }}"><i class="fa fa-home"></i></a></li>
+                <li><a href="{{ path("app_home") }}">Compte</a></li>
+                <li><a href="{{ path("app_auth_user_login") }}">connexion</a></li>
+        </ul>
+        {% include 'layouts/partials/_flash.html.twig' %}
+
+        <div class="row">
+                <div id="content" class="col-sm-12">
+                        <div class="page-login">
+
+                                <div class="account-border">
+                                        <div class="row">
+                                                <div class="col-sm-6 new-customer">
+                                                        <div class="well">
+                                                                <h2><i class="fa fa-file-o" aria-hidden="true"></i> NOUVEAU CLIENT</h2>
+                                                                <p>En créant un compte, vous pourrez faire vos achats plus rapidement, être à jour sur l'état d'une commande et suivre les commandes que vous avez passées précédemment.</p>
+                                                        </div>
+                                                        <div class="bottom-form">
+                                                                <a href="{{ path("app_auth_user_register") }}" class="btn btn-default pull-right">Continuer</a>
+                                                        </div>
+                                                </div>
+
+                                                <form action="#" method="post" enctype="multipart/form-data">
+                                                        <div class="col-sm-6 customer-login">
+                                                                <div class="well">
+                                                                        <h2><i class="fa fa-file-text-o" aria-hidden="true"></i> Déjà client</h2>
+                                                                        <p><strong>Je suis un client récurrent</strong></p>
+                                                                        <div class="form-group">
+                                                                                <label class="control-label " for="input-email">Adresse e-mail</label>
+                                                                                <input type="text" value="{{ lastUsername }}"  name="email_or_phone" id="input-email" class="form-control" />
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                                <label class="control-label " for="input-password">Mot de passe</label>
+                                                                                <input type="password" name="password" value="" id="input-password" class="form-control" />
+                                                                        </div>
+                                                                        <div>
+                                                                                <label for="remember_me">
+                                                                                        <input type="checkbox" name="_remember_me" id="remember_me">
+                                                                                        Se souvenir de moi
+                                                                                </label>
+                                                                                <input type="hidden" name="csrf_token" value="{{ csrf_token("authenticate") }}">
+                                                                        </div>
+                                                                </div>
+                                                                <div class="bottom-form">
+                                                                        <a href="#" class="forgot">mot de passe oublié</a>
+                                                                        <input type="submit" value="Se connecter" class="btn btn-default pull-right" />
+                                                                </div>
+                                                        </div>
+                                                </form>
+                                        </div>
+                                </div>
+
+                        </div>
+                </div>
+        </div>
+{% endblock %}

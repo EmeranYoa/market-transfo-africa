@@ -1,0 +1,55 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Mon compte{% endblock %}
+
+{% block body %}
+    <ul class="breadcrumb">
+        <li><a href="{{ path("app_home") }}"><i class="fa fa-home"></i></a></li>
+        <li><a href="{{ path("app_home") }}">Compte</a></li>
+    </ul>
+    {% include 'layouts/partials/_flash.html.twig' %}
+
+    <div class="row">
+            <div id="content" class="col-sm-9">
+                <h2>Mon compte</h2>
+                <ul class="list-unstyled">
+                    <li><a href="#">Modifier les informations de votre compte</a></li>
+                    <li><a href="#">Changez votre mot de passe</a></li>
+                    <li><a href="#">Modifier votre carnet d'adresses</a></li>
+                    <li><a href="#">Modifiez votre liste d'envies</a></li>
+                </ul>
+                <h2>Mes commandes</h2>
+                <ul class="list-unstyled">
+                    <li><a href="#">Consultez l'historique de vos commandes</a></li>
+{#                    <li><a href="#">Your Reward Points</a></li>#}
+{#                    <li><a href="#">View your return requests</a></li>#}
+                    <li><a href="#">Vos transactions</a></li>
+                    <li><a href="#">Paiements récurrents</a></li>
+                </ul>
+                <h2>Mon compte partenaire</h2>
+                <ul class="list-unstyled">
+                    <li><a href="https://opencart.opencartworks.com/themes/so_emarket/index.php?route=account/affiliate/add">Devenez vendeur</a></li>
+                </ul>
+{#                <h2>Newsletter</h2>#}
+{#                <ul class="list-unstyled">#}
+{#                    <li><a href="https://opencart.opencartworks.com/themes/so_emarket/index.php?route=account/newsletter">Subscribe / unsubscribe to newsletter</a></li>#}
+{#                </ul>#}
+            </div>
+            <aside class="col-md-3 col-sm-4 col-xs-12 content-aside right_column sidebar-offcanvas">
+                <span id="close-sidebar" class="fa fa-times"></span>
+
+                <div class="list-group">
+                    <a href="{{ path('app_account_my_account') }}" class="list-group-item">Mon compte</a>
+                    <a href="#" class="list-group-item">Modifier le compte</a>
+                    <a href="#" class="list-group-item">Mot de passe</a>
+                    <a href="#" class="list-group-item">Carnet d'adresses</a>
+                    <a href="#" class="list-group-item">Liste d'envies</a>
+                    <a href="#" class="list-group-item">Historique des commandes</a>
+                    <a href="#" class="list-group-item">Paiements récurrents</a>
+                    <a href="#" class="list-group-item">Transactions</a>
+                    <a href="{{ path('app_auth_user_logout') }}" class="list-group-item">Se déconnecter</a>
+                </div>
+
+            </aside>
+        </div>
+{% endblock %}

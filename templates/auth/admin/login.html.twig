@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Se connecter | ShopTransfoAfrica</title>
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('admin/css/preloader.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin/css/app.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin/css/icons.min.css') }}">
+    {% endblock %}
+
+    {% block javascripts %}
+{#        {{ encore_entry_script_tags('admin') }}#}
+    {% endblock %}
+</head>
+<body>
+<div class="auth-page">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-xxl-3 col-lg-4 col-md-5">
+                <div class="auth-full-page-content d-flex p-sm-5 p-4">
+                    <div class="w-100">
+                        <div class="d-flex flex-column h-100">
+                            <div class="mb-4 mb-md-5 text-center">
+                                <a href="{{ path('app_home') }}" class="d-block auth-logo">
+                                    <img src="/images/logo-sm.svg" alt="" height="28"> <span class="logo-txt">Minia</span>
+                                </a>
+                            </div>
+                            <div class="auth-content my-auto">
+                                <div class="text-center">
+                                    <h5 class="mb-0">Content de te revoir !</h5>
+                                    <p class="text-muted mt-2">Connectes-toi pour accéder au tableau de bord.</p>
+                                </div>
+                                {% include 'layouts/partials/_flash.html.twig' %}
+                                <form class="mt-4 pt-2" method="post">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="username">Nom d'utilisateur</label>
+                                        <input type="text" value="{{ lastUsername }}" class="form-control" id="username" name="email_or_phone" placeholder="Ton email de connexion">
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-start">
+                                            <div class="flex-grow-1">
+                                                <label class="form-label" for="password-addon">Mot de passe</label>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <div class="">
+                                                    <a href="#" class="text-muted">Mot de passe oubliez?</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-group auth-pass-inputgroup">
+                                            <input type="password" name="password" class="form-control" placeholder="Ton mot de passe" aria-label="Password" aria-describedby="password-addon">
+                                            <button class="btn btn-light shadow-none ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="remember-check">
+                                                <label class="form-check-label" for="remember-check">
+                                                    Se souvenir de moi
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="hidden" name="csrf_token" value="{{ csrf_token("authenticate") }}">
+                                        <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Se connecter</button>
+                                    </div>
+                                </form>
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token("authenticate") }}">
+                            </div>
+                            <div class="mt-4 mt-md-5 text-center">
+                                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Transfo Africa   . <i class="mdi mdi-heart text-danger"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end auth full page content -->
+            </div>
+            <!-- end col -->
+            <div class="col-xxl-9 col-lg-8 col-md-7">
+                <div class="auth-bg pt-md-5 p-4 d-flex">
+                    <div class="bg-overlay bg-primary"></div>
+                    <ul class="bg-bubbles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- end bubble effect -->
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-xl-7">
+                            <div class="p-0 p-sm-4 px-xl-0">
+{#                                <h1>Adminstration</h1>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container fluid -->
+</div>
+{#{% include 'layouts/partials/_flash.html.twig' %}#}
+{#    <h1>Se connecter</h1>#}
+{#    <form method="post">#}
+{#        <div>#}
+{#            <label for="email_or_phone">Nom d'utilisateur</label>#}
+{#            <input type="text" name="email_or_phone" value="{{ lastUsername }}" id="email_or_phone" placeholder="Entrer votre email ou numéro de téléphone" autofocus>#}
+{#        </div>#}
+{#        <div>#}
+{#            <label for="password">Mot de passe</label>#}
+{#            <input type="password" name="password" id="password" placeholder="Entrer votre mot de passe">#}
+{#        </div>#}
+{#        <div>#}
+{#            <label for="remember_me">#}
+{#                <input type="checkbox" name="_remember_me" id="remember_me">#}
+{#                Se souvenir de moi#}
+{#            </label>#}
+{#            <a href="#">Mot de passe oublié ?</a>#}
+{#            <input type="hidden" name="csrf_token" value="{{ csrf_token("authenticate") }}">#}
+{#        </div>#}
+{#        <input type="submit" value="Se connecter">#}
+{#    </form>#}
+<script src="{{ asset('admin/libs/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ asset('admin/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('admin/libs/metismenu/dist/metisMenu.min.js') }}"></script>
+<script src="{{ asset('admin/libs/simplebar/dist/simplebar.min.js') }}"></script>
+<script src="{{ asset('admin/libs/node-waves/dist/waves.min.js') }}"></script>
+<script src="{{ asset('admin/libs/feather-icons/dist/feather.min.js') }}"></script>
+<script src="{{ asset('admin/libs/pace-js/pace.min.js') }}"></script>
+<script src="{{ asset('admin/js/pages/pass-addon.init.js') }}"></script>
+</body>
+</html>

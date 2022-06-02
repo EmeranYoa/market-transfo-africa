@@ -1,0 +1,45 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    {% include 'layouts/partials/_flash.html.twig' %}
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly ss is coming frsom:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/home/ey-transfo/lab/project/personnal/e-market/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/home/ey-transfo/lab/project/personnal/e-market/templates/home/user.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block  javascripts %}
+    <!-- Include Libs & Plugins
+        ============================================ -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="{{ asset("front/js/jquery-2.2.4.min.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("front/js/bootstrap.min.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("front/js/owl-carousel/owl.carousel.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("front/js/themejs/libs.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("front/js/unveil/jquery.unveil.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("front/js/countdown/jquery.countdown.min.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("front/js/dcjqaccordion/jquery.dcjqaccordion.2.8.min.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("front/js/datetimepicker/moment.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("front/js/datetimepicker/bootstrap-datetimepicker.min.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("front/js/jquery-ui/jquery-ui.min.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("front/js/modernizr/modernizr-2.6.2.min.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("front/js/minicolors/jquery.miniColors.min.js") }}"></script>
+
+    <!-- Theme files
+    ============================================ -->
+
+    <script type="text/javascript" src="{{ asset("front/js/themejs/application.js") }}"></script>
+
+    <script type="text/javascript" src="{{ asset("front/js/themejs/homepage.js") }}"></script>
+
+    <script type="text/javascript" src="{{ asset("front/js/themejs/toppanel.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("front/js/themejs/so_megamenu.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("front/js/themejs/addtocart.js") }}"></script>
+{% endblock %}
