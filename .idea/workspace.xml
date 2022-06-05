@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="800bd554-4be8-4652-9e04-b0a6caa70f4c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/structure.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/partials/right-sidebar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/auth/user/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/user/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/auth/user/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/user/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20220527103610.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layouts/base_admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/base_admin.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +18,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -138,18 +145,24 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/emeran/project/e-market&quot;,
+    &quot;js.buildTools.gulp.gulp_package_dir&quot;: &quot;/home/ey-transfo/lab/project/personnal/market/node_modules/gulp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ey-transfo/lab/project/personnal/market&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Color Scheme Font&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$/public/admin" />
     </key>
@@ -157,6 +170,17 @@
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/assets/js/admin" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -182,6 +206,11 @@
       <workItem from="1654188022323" duration="93000" />
       <workItem from="1654344334360" duration="88000" />
       <workItem from="1654345026404" duration="447000" />
+      <workItem from="1654411699134" duration="1317000" />
+      <workItem from="1654413607794" duration="4359000" />
+      <workItem from="1654434458204" duration="1712000" />
+      <workItem from="1654439895014" duration="5511000" />
+      <workItem from="1654445472218" duration="1142000" />
     </task>
     <servers />
   </component>
