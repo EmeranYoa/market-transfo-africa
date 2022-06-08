@@ -14,17 +14,16 @@ use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationExc
 use Symfony\Component\Security\Http\Authenticator\AbstractAuthenticator;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\CsrfTokenBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\PasswordUpgradeBadge;
+use Symfony\Component\Security\Http\Authenticator\Passport\Badge\RememberMeBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
+use Symfony\Component\Security\Http\Util\TargetPathTrait;
 
 class AppAuthenticator extends AbstractAuthenticator
 {
-    public const USER_LOGIN_ROUTE = "app_auth_user_login";
-    public const ADMIN_LOGIN_ROUTE = "app_auth_admin_login";
-
+    use TargetPathTrait;
     private UserRepository $userRepository;
-    private UrlGeneratorInterface $urlGenerator;
 
     public function __construct(UserRepository $userRepository, UrlGeneratorInterface $urlGenerator)
     {
@@ -65,10 +64,16 @@ class AppAuthenticator extends AbstractAuthenticator
         }
 
 
-        return new Passport(new UserBadge($emailOrPhone),
+        return new Passport(new UserBadge($emailOrPhone, function ($emailOrPhone){
+            return is_numeric($emailOrPhone)
+                ? $this->userRepository->findOneByPhone($emailOrPhone)
+                : $this->userRepository->findOneByEmail($emailOrPhone)
+            ;
+        }),
             new PasswordCredentials($request->get("password")),[
                 new CsrfTokenBadge("authenticate", $request->get("csrf_token")),
                 new PasswordUpgradeBadge($request->get("password"), $this->userRepository),
+                new RememberMeBadge(),
             ]
         );
     }
@@ -76,6 +81,9 @@ class AppAuthenticator extends AbstractAuthenticator
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         $request->getSession()->getFlashBag()->add("success", "Bienvenue dans votre session :)");
+        if ($target = $this->getTargetPath($request->getSession(), $firewallName)){
+            return new RedirectResponse($target);
+        }
         return $this->redirectWhenSuccessOrFailure($request);
     }
 
@@ -106,14 +114,4 @@ class AppAuthenticator extends AbstractAuthenticator
             return new RedirectResponse($this->urlGenerator->generate('app_admin_dashboard'));
         }
     }
-//    public function start(Request $request, AuthenticationException $authException = null): Response
-//    {
-//        /*
-//         * If you would like this class to control what happens when an anonymous user accesses a
-//         * protected page (e.g. redirect to /login), uncomment this method and make this class
-//         * implement Symfony\Component\Security\Http\EntryPoint\AuthenticationEntryPointInterface.
-//         *
-//         * For more details, see https://symfony.com/doc/current/security/experimental_authenticators.html#configuring-the-authentication-entry-point
-//         */
-//    }
 }
