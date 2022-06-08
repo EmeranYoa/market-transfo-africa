@@ -21,8 +21,11 @@ security:
             lazy: true
             provider: app_user_provider
             custom_authenticator: App\Security\AppAuthenticator
+            entry_point: App\Security\AuthenticationEntryPoint
             logout:
                 path: app_auth_user_logout
+            remember_me:
+                secret: '%kernel.secret%'
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
