@@ -1,0 +1,243 @@
+<!-- ========== Left Sidebar Start ========== -->
+<div class="vertical-menu">
+
+    <div data-simplebar class="h-100">
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="metismenu list-unstyled" id="side-menu">
+                <li class="menu-title" data-key="t-menu">{% trans %}Menu{% endtrans %}</li>
+
+                <li>
+                    <a href="{{ path('app_admin_dashboard') }}">
+                        <i data-feather="home"></i>
+                        <span data-key="t-dashboard">{% trans %}Dashboard{% endtrans %}</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">{% trans %}Apps{% endtrans %}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="apps-calendar">
+                                <span data-key="t-calendar">{% trans %}Calendar{% endtrans %}</span>
+                            </a>
+                        </li>
+        
+                        <li>
+                            <a href="apps-chat">
+                                <span data-key="t-chat">{% trans %}Chat{% endtrans %}</span>
+                            </a>
+                        </li>
+        
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <span data-key="t-email">{% trans %}Email{% endtrans %}</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="apps-email-inbox" data-key="t-inbox">{% trans %}Inbox{% endtrans %}</a></li>
+                                <li><a href="apps-email-read" data-key="t-read-email">{% trans %}Read Email{% endtrans %}</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <span data-key="t-invoices">{% trans %}Invoices{% endtrans %}</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="apps-invoices-list" data-key="t-invoice-list">{% trans %}Invoice List{% endtrans %}</a></li>
+                                <li><a href="apps-invoices-detail" data-key="t-invoice-detail">{% trans %}Invoice Detail{% endtrans %}</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <span data-key="t-contacts">{% trans %}Contacts{% endtrans %}</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="apps-contacts-grid" data-key="t-user-grid">{% trans %}User Grid{% endtrans %}</a></li>
+                                <li><a href="apps-contacts-list" data-key="t-user-list">{% trans %}User List{% endtrans %}</a></li>
+                                <li><a href="apps-contacts-profile" data-key="t-profile">{% trans %}Profile{% endtrans %}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="users"></i>
+                        <span data-key="t-authentication">{% trans %}Authentication{% endtrans %}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="auth-login" data-key="t-login">{% trans %}Login{% endtrans %}</a></li>
+                        <li><a href="auth-register" data-key="t-register">{% trans %}Register{% endtrans %}</a></li>
+                        <li><a href="auth-recoverpw" data-key="t-recover-password">{% trans %}Recover Password{% endtrans %}</a></li>
+                        <li><a href="auth-lock-screen" data-key="t-lock-screen">{% trans %}Lock Screen{% endtrans %}</a></li>
+                        <li><a href="auth-logout" data-key="t-logout">{% trans %}Logout{% endtrans %}</a></li>
+                        <li><a href="auth-confirm-mail" data-key="t-confirm-mail">{% trans %}Confirm Mail{% endtrans %}</a></li>
+                        <li><a href="auth-email-verification" data-key="t-email-verification">{% trans %}Email Verification{% endtrans %}</a></li>
+                        <li><a href="auth-two-step-verification" data-key="t-two-step-verification">{% trans %}Two Step Verification{% endtrans %}</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="file-text"></i>
+                        <span data-key="t-pages">{% trans %}Pages{% endtrans %}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="pages-starter" data-key="t-starter-page">{% trans %}Starter Page{% endtrans %}</a></li>
+                        <li><a href="pages-maintenance" data-key="t-maintenance">{% trans %}Maintenance{% endtrans %}</a></li>
+                        <li><a href="pages-comingsoon" data-key="t-coming-soon">{% trans %}Coming Soon{% endtrans %}</a></li>
+                        <li><a href="pages-timeline" data-key="t-timeline">{% trans %}Timeline{% endtrans %}</a></li>
+                        <li><a href="pages-faqs" data-key="t-faqs">{% trans %}FAQs{% endtrans %}</a></li>
+                        <li><a href="pages-pricing" data-key="t-pricing">{% trans %}Pricing{% endtrans %}</a></li>
+                        <li><a href="pages-404" data-key="t-error-404">{% trans %}Error 404{% endtrans %}</a></li>
+                        <li><a href="pages-500" data-key="t-error-500">{% trans %}Error 500{% endtrans %}</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="layouts-horizontal">
+                        <i data-feather="layout"></i>
+                        <span data-key="t-horizontal">{% trans %}Horizontal{% endtrans %}</span>
+                    </a>
+                </li>
+
+                <li class="menu-title mt-2" data-key="t-components">{% trans %}Elements{% endtrans %}</li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="briefcase"></i>
+                        <span data-key="t-components">{% trans %}Components{% endtrans %}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="ui-alerts" data-key="t-alerts">{% trans %}Alerts{% endtrans %}</a></li>
+                        <li><a href="ui-buttons" data-key="t-buttons">{% trans %}Buttons{% endtrans %}</a></li>
+                        <li><a href="ui-cards" data-key="t-cards">{% trans %}Cards{% endtrans %}</a></li>
+                        <li><a href="ui-carousel" data-key="t-carousel">{% trans %}Carousel{% endtrans %}</a></li>
+                        <li><a href="ui-dropdowns" data-key="t-dropdowns">{% trans %}Dropdowns{% endtrans %}</a></li>
+                        <li><a href="ui-grid" data-key="t-grid">{% trans %}Grid{% endtrans %}</a></li>
+                        <li><a href="ui-images" data-key="t-images">{% trans %}Images{% endtrans %}</a></li>
+                        <li><a href="ui-modals" data-key="t-modals">{% trans %}Modals{% endtrans %}</a></li>
+                        <li><a href="ui-offcanvas" data-key="t-offcanvas">{% trans %}Offcanvas{% endtrans %}</a></li>
+                        <li><a href="ui-progressbars" data-key="t-progress-bars">{% trans %}Progress Bars{% endtrans %}</a></li>
+                        <li><a href="ui-placeholders" data-key="t-progress-bars">{% trans %}Placeholders{% endtrans %}</a></li>
+                        <li><a href="ui-tabs-accordions" data-key="t-tabs-accordions">{% trans %}Tabs & Accordions{% endtrans %}</a></li>
+                        <li><a href="ui-typography" data-key="t-typography">{% trans %}Typography{% endtrans %}</a></li>
+                        <li><a href="ui-toasts" data-key="t-typography">{% trans %}Toasts{% endtrans %}</a></li>
+                        <li><a href="ui-video" data-key="t-video">{% trans %}Video{% endtrans %}</a></li>
+                        <li><a href="ui-general" data-key="t-general">{% trans %}General{% endtrans %}</a></li>
+                        <li><a href="ui-colors" data-key="t-colors">{% trans %}Colors{% endtrans %}</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="gift"></i>
+                        <span data-key="t-ui-elements">{% trans %}Extended{% endtrans %}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="extended-lightbox" data-key="t-lightbox">{% trans %}Lightbox{% endtrans %}</a></li>
+                        <li><a href="extended-rangeslider" data-key="t-range-slider">{% trans %}Range Slider{% endtrans %}</a></li>
+                        <li><a href="extended-sweet-alert" data-key="t-sweet-alert">{% trans %}SweetAlert 2{% endtrans %}</a></li>
+                        <li><a href="extended-session-timeout" data-key="t-session-timeout">{% trans %}Session Timeout{% endtrans %}</a></li>
+                        <li><a href="extended-rating" data-key="t-rating">{% trans %}Rating{% endtrans %}</a></li>
+                        <li><a href="extended-notifications" data-key="t-notifications">{% trans %}Notifications{% endtrans %}</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);">
+                        <i data-feather="box"></i>
+                        <span class="badge rounded-pill bg-soft-danger text-danger float-end">7</span>
+                        <span data-key="t-forms">{% trans %}Forms{% endtrans %}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="form-elements" data-key="t-form-elements">{% trans %}Basic Elements{% endtrans %}</a></li>
+                        <li><a href="form-validation" data-key="t-form-validation">{% trans %}Validation{% endtrans %}</a></li>
+                        <li><a href="form-advanced" data-key="t-form-advanced">{% trans %}Advanced Plugins{% endtrans %}</a></li>
+                        <li><a href="form-editors" data-key="t-form-editors">{% trans %}Editors{% endtrans %}</a></li>
+                        <li><a href="form-uploads" data-key="t-form-upload">{% trans %}File Upload{% endtrans %}</a></li>
+                        <li><a href="form-wizard" data-key="t-form-wizard">{% trans %}Wizard{% endtrans %}</a></li>
+                        <li><a href="form-mask" data-key="t-form-mask">{% trans %}Mask{% endtrans %}</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="sliders"></i>
+                        <span data-key="t-tables">{% trans %}Tables{% endtrans %}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="tables-basic" data-key="t-basic-tables">{% trans %}Bootstrap Basic{% endtrans %}</a></li>
+                        <li><a href="tables-datatable" data-key="t-data-tables">{% trans %}DataTables{% endtrans %}</a></li>
+                        <li><a href="tables-responsive" data-key="t-responsive-table">{% trans %}Responsive{% endtrans %}</a></li>
+                        <li><a href="tables-editable" data-key="t-editable-table">{% trans %}Editable{% endtrans %}</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="pie-chart"></i>
+                        <span data-key="t-charts">{% trans %}Charts{% endtrans %}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="charts-apex" data-key="t-apex-charts">{% trans %}Apexcharts{% endtrans %}</a></li>
+                        <li><a href="charts-echart" data-key="t-e-charts">{% trans %}Echarts{% endtrans %}</a></li>
+                        <li><a href="charts-chartjs" data-key="t-chartjs-charts">{% trans %}Chartjs{% endtrans %}</a></li>
+                        <li><a href="charts-knob" data-key="t-knob-charts">{% trans %}Jquery Knob{% endtrans %}</a></li>
+                        <li><a href="charts-sparkline" data-key="t-sparkline-charts">{% trans %}Sparkline{% endtrans %}</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="cpu"></i>
+                        <span data-key="t-icons">{% trans %}Icons{% endtrans %}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="icons-boxicons" data-key="t-boxicons">{% trans %}Boxicons{% endtrans %}</a></li>
+                        <li><a href="icons-materialdesign" data-key="t-material-design">{% trans %}Material Design{% endtrans %}</a></li>
+                        <li><a href="icons-dripicons" data-key="t-dripicons">{% trans %}Dripicons{% endtrans %}</a></li>
+                        <li><a href="icons-fontawesome" data-key="t-font-awesome">{% trans %}Font Awesome 5{% endtrans %}</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="map"></i>
+                        <span data-key="t-maps">{% trans %}Maps{% endtrans %}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="maps-google" data-key="t-g-maps">{% trans %}Google{% endtrans %}</a></li>
+                        <li><a href="maps-vector" data-key="t-v-maps">{% trans %}Vector{% endtrans %}</a></li>
+                        <li><a href="maps-leaflet" data-key="t-l-maps">{% trans %}Leaflet{% endtrans %}</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="share-2"></i>
+                        <span data-key="t-multi-level">{% trans %}Multi Level{% endtrans %}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="javascript: void(0);" data-key="t-level-1-1">{% trans %}Level{% endtrans %} 1.1</a></li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" data-key="t-level-1-2">{% trans %}Level{% endtrans %} 1.2</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="javascript: void(0);" data-key="t-level-2-1">{% trans %}Level{% endtrans %} 2.1</a></li>
+                                <li><a href="javascript: void(0);" data-key="t-level-2-2">{% trans %}Level{% endtrans %} 2.2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <!-- Sidebar -->
+    </div>
+</div>
+<!-- Left Sidebar End -->
