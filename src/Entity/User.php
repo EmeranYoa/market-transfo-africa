@@ -12,6 +12,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields:"email", message: "Je pense que tu es déjà inscrit !")]
 #[UniqueEntity(fields:"phone", message: "Je pense que tu es déjà inscrit !")]
+#[ORM\Table(name:"`user`")]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     public const ROLE_USER = "ROLE_USER";
@@ -40,6 +41,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\Length(min: 8)]
     #[Assert\NotBlank]
     private $password;
+
+    #[ORM\Column(type: 'string', nullable: true)]
+    private ?string $confirmationToken = null;
+
+    #[ORM\Column(type:"datetime", nullable:true)]
+    private ?\DateTimeInterface $updatedAt = null;
+
+    #[ORM\Column(type:"datetime", nullable:false)]
+    private \DateTimeInterface $createdAt;
 
     public function getId(): ?int
     {
@@ -119,7 +129,48 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPhone(string $phone): self
     {
         $this->phone = $phone;
-
         return  $this;
+    }
+    public function getConfirmationToken(): ?string
+    {
+        return $this->confirmationToken;
+    }
+
+    public function setConfirmationToken(?string $confirmationToken): self
+    {
+        $this->confirmationToken = $confirmationToken;
+        return $this;
+    }
+
+    /**
+     * @return \DateTimeInterface
+     */
+    public function getCreatedAt(): \DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \DateTimeInterface $createdAt
+     */
+    public function setCreatedAt(\DateTimeInterface $createdAt): void
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return \DateTimeInterface|null
+     */
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTimeInterface|null $updatedAt
+     */
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
     }
 }
