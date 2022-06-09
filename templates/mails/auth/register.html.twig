@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Bienvenue sur Shop Transfo !</h1>
+<p>Vous venez de créer un compte sur shoptransfoafricainc.com. Pour activer votre compte il vous suffit de cliquer sur ce lien</p>
+    <a href="{{ url('app_auth_user_register_confirm', {id: user.id, token: user.confirmationToken}) }}">Valider mon compte</a>
+<p>Si vous n'êtes pas à l'origine de la création de ce compte ne tenez pas compte de cet email, le compte sera automatiquement supprimé.</p>
+</body>
+</html>
