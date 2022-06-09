@@ -1,21 +1,55 @@
 version: '3'
 
 services:
-###> doctrine/doctrine-bundle ###
-  database:
-    image: postgres:${POSTGRES_VERSION:-13}-alpine
+  db:
+    restart: unless-stopped
+    image: postgres:13-alpine
+    ports:
+      - 5432:5432 # On expose le port pour pouvoir inspecter la base pendant la phase de développement
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-app}
-      # You should definitely change the password in production
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ChangeMe}
-      POSTGRES_USER: ${POSTGRES_USER:-symfony}
+      POSTGRES_USER: market
+      POSTGRES_PASSWORD: market
+      POSTGRES_DB: market
     volumes:
-      - db-data:/var/lib/postgresql/data:rw
-      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
-      # - ./docker/db/data:/var/lib/postgresql/data:rw
-###< doctrine/doctrine-bundle ###
+      - db-data:/var/lib/postgresql/data
+      - ./var:/var/www/var
+  adminer:
+    image: adminer
+    environment:
+      ADMINER_DESIGN: pepa-linha
+      ADMINER_DEFAULT_SERVER: db
+    depends_on:
+      - db
+    ports:
+      - 8888:8080
 
+  mail:
+    image: mailhog/mailhog
+    ports:
+      - 1080:8025
+
+  web:
+    restart: unless-stopped
+    container_name: web
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    depends_on:
+      - db
+    ports:
+      - 8000:80
+    volumes:
+      - .:/var/www:delegated
+#  node:
+#    build:
+#      context: ./docker/node
+#    command: yarn run dev
+#    working_dir: /usr/src/app
+#    volumes:
+#      - .:/usr/src/app
+#    ports:
+#      - 3000:3000
 volumes:
-###> doctrine/doctrine-bundle ###
   db-data:
-###< doctrine/doctrine-bundle ###
+networks:
+  dev:
